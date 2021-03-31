@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
-
+#include <stdlib.h>
+#include <time.h>
 
 // List containing integers
 class LinkedList {
@@ -45,6 +45,17 @@ class LinkedList {
       temp = temp1->data;
       temp1->data = temp2->data;
       temp2->data = temp;
+    }
+
+    // returns a random integer given a range
+    int getRandInt(int low, int high) {
+      if (high < low) {
+        std::cout << "High bound has to be higher than lower!" << '\n';
+        return 0;
+      }
+      // initialise random seed
+      srand (time(NULL));
+      return rand()%(high-low) + low;
     }
 
   public: // herer goes the functions
@@ -106,6 +117,12 @@ class LinkedList {
       return size;
     }
 
+    void randomize() {
+      for (int i = 0; i <  9 * size; i++) {
+        swap(getRandInt(0, size), getRandInt(0, size));
+      }
+    }
+
     // sorts the list using quicksort
     void quickSort(int low = 0, int high = -1) {
       // fo the first call of the method
@@ -132,8 +149,7 @@ int main() {
   for (int i = 10; i > 0; i--) {
     list.push(i);
   }
-  list.printList();
-  list.quickSort();
+  list.randomize();
   list.printList();
   return 0;
 }
