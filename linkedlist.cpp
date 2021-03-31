@@ -15,7 +15,7 @@ class LinkedList {
     // returns the value of the specified index
     node *getNodePtr(int n) {
       node *temp = head;
-      for (int i = 0; i < n; ++i) {
+      for (int i = 0; i < n; i++) {
         temp = temp->next;
       }
       return temp;
@@ -95,7 +95,7 @@ class LinkedList {
       else {
         endCondition = n;
       }
-      for (int i = 0; i < endCondition; ++i) {
+      for (int i = 0; i < endCondition; i++) {
         temp = temp->next;
       }
       return temp->data;
