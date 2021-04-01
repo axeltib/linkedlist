@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdlib.h>
-#include <time.h>
 
 // List containing integers
 class LinkedList {
@@ -15,7 +14,13 @@ class LinkedList {
     // returns the value of the specified index
     node *getNodePtr(int n) {
         node *temp = head;
-        for (int i = 0; i < n; i++) {
+        int endCondition;
+        if (n < 0) {
+            endCondition = size + n;
+        } else {
+            endCondition = n;
+        }
+        for (int i = 0; i < endCondition; i++) {
             temp = temp->next;
         }
         return temp;
@@ -78,6 +83,17 @@ class LinkedList {
             tail->next = temp;
             tail = tail->next;
         }
+    }
+
+    int pop() {
+        // saves last nodes data
+        int toReturn = tail->data;
+        // removes the last node
+        node *temp = getNodePtr(-2);
+        temp->next = NULL;
+        size--;
+        tail = getNodePtr(-1);
+        return toReturn;
     }
 
     // prints the list in order
@@ -148,7 +164,9 @@ int main() {
     for (int i = 10; i > 0; i--) {
         list.push(i);
     }
-    list.randomize();
+    std::cout << list.pop() << '\n';
+    std::cout << list.pop() << '\n';
+    std::cout << list.getValue(-1) << '\n';
     list.printList();
     return 0;
 }
