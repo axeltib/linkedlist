@@ -158,15 +158,39 @@ class LinkedList {
 
 };
 
-
-int main() {
+// used for easy initialization of the list
+LinkedList initList() {
+    // initialize the list
     LinkedList list;
     for (int i = 10; i > 0; i--) {
         list.push(i);
     }
-    std::cout << list.pop() << '\n';
-    std::cout << list.pop() << '\n';
-    std::cout << list.getValue(-1) << '\n';
+    return list;
+}
+
+// function to test the pop implementation
+void testPop() {
+    LinkedList list = initList();
+    std::cout << "Before popping twice: " << '\n';
     list.printList();
+    list.pop();
+    list.pop();
+    std::cout << "This is the resulting list:" << '\n';
+    list.printList();
+}
+
+// function to test the randomize implementation
+void testRandomize() {
+    LinkedList list = initList();
+    std::cout << "Before randomization:" << '\n';
+    list.printList();
+    std::cout << "After randomization:" << '\n';
+    list.randomize();
+    list.printList();
+}
+
+int main() {
+    testPop();
+    testRandomize();
     return 0;
 }
