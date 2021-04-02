@@ -100,7 +100,7 @@ class LinkedList {
     }
 
     // prints the list in order
-    void printList() {
+    void print() {
         node *temp = head;
         std::cout << "[";
         while (temp != NULL) {
@@ -174,7 +174,6 @@ LinkedList initList() {
 
 int main() {
     LinkedList list = initList();
-    testPop();
-    testRandomize();
+    list.print()
     return 0;
 }
