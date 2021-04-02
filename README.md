@@ -7,10 +7,11 @@ The aim of this project is for me to get a better understanding of the c++ langu
 - Push node to the end of the list
 - Print the whole list in a standard way
 - Sort the list using quicksort
-- Return a value for a specified index (works for negative indices aswell)
+- Return a value for a specified index (works for negative indices as well)
+- Randomizer, though basic and seed is time dependent
 
 ### Future improvements:
-- [ ] Randomiser
+- [x] Randomiser
 - [ ] Other sorting algorithms
 - [ ] Inserting elements
 - [ ] Remove specified elements
