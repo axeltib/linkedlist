@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-
+#include <time.h>
 // List containing integers
 class LinkedList {
     private:  // define important variables and pointers
@@ -57,8 +57,9 @@ class LinkedList {
             std::cout << "High bound has to be higher than lower!" << '\n';
             return 0;
         }
-        // initialise random seed
-        srand (time(NULL));
+        // initialise random seed, use the time
+        // even though it is deterministic, it gets the job done for now
+        srand (clock());
         return rand()%(high-low) + low;
     }
 
