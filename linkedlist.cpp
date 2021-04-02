@@ -8,8 +8,9 @@ class LinkedList {
         int data;
         node* next;
     };
-    int size;
-    node *head, *tail;  // first respectively last pointer
+    int size = 0;
+    node *head = NULL;
+    node *tail = NULL;  // first respectively last pointer
 
     // returns the value of the specified index
     node *getNodePtr(int n) {
@@ -65,11 +66,7 @@ class LinkedList {
     }
 
     public: // here goes the functions
-    LinkedList() {
-        size = 0;
-        head = NULL;
-        tail = NULL;
-    }
+
     // Adds a new integer at the end of the list
     void push(int n) {
         node *temp = new node;
@@ -173,7 +170,7 @@ LinkedList initList(int n = 10) {
 }
 
 int main() {
-    LinkedList list = initList(50);
+    LinkedList list = initList(13);
     list.print();
     list.randomize();
     list.print();
