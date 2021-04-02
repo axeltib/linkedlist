@@ -27,6 +27,7 @@ class LinkedList {
 
     }
 
+    // partitions a list into two parts
     int partition(int low, int high) {
         int pivot = getValue(high);
         int i = low - 1;
@@ -63,7 +64,7 @@ class LinkedList {
         return rand()%(high-low) + low;
     }
 
-    public: // herer goes the functions
+    public: // here goes the functions
     LinkedList() {
         size = 0;
         head = NULL;
@@ -86,6 +87,7 @@ class LinkedList {
         }
     }
 
+    // removes and returns the last value of the list
     int pop() {
         // saves last nodes data
         int toReturn = tail->data;
@@ -133,6 +135,7 @@ class LinkedList {
         return size;
     }
 
+    // randomizes the list
     void randomize() {
         for (int i = 0; i <  9 * size; i++) {
             swap(getRandInt(0, size), getRandInt(0, size));
