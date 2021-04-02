@@ -163,17 +163,21 @@ class LinkedList {
 };
 
 // used for easy initialization of the list
-LinkedList initList() {
+LinkedList initList(int n = 10) {
     // initialize the list
     LinkedList list;
-    for (int i = 10; i > 0; i--) {
+    for (int i = n; i > 0; i--) {
         list.push(i);
     }
     return list;
 }
 
 int main() {
-    LinkedList list = initList();
-    list.print()
+    LinkedList list = initList(50);
+    list.print();
+    list.randomize();
+    list.print();
+    list.quickSort();
+    list.print();
     return 0;
 }
