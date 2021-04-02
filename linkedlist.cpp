@@ -172,28 +172,8 @@ LinkedList initList() {
     return list;
 }
 
-// function to test the pop implementation
-void testPop() {
-    LinkedList list = initList();
-    std::cout << "Before popping twice: " << '\n';
-    list.printList();
-    list.pop();
-    list.pop();
-    std::cout << "This is the resulting list:" << '\n';
-    list.printList();
-}
-
-// function to test the randomize implementation
-void testRandomize() {
-    LinkedList list = initList();
-    std::cout << "Before randomization:" << '\n';
-    list.printList();
-    std::cout << "After randomization:" << '\n';
-    list.randomize();
-    list.printList();
-}
-
 int main() {
+    LinkedList list = initList();
     testPop();
     testRandomize();
     return 0;
